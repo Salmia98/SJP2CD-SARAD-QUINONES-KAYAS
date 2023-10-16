@@ -1,0 +1,194 @@
+
+body {
+    background-color: #d6eaff; 
+
+}
+
+.top-Container {
+    display: flex;
+    background-color: #fdfdff ;
+}
+
+.logo-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-left: 100px;
+    font-size: 15px;
+}
+
+.text-logo-cont {
+    display: flex;
+    flex-direction: column;
+    /* background-color: aqua; */
+    line-height: 0.1;
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+/* icons */
+.top-right-container {
+    display: flex;
+    flex-direction: row;
+    /* background-color: pink; */
+    align-items: center;
+    margin-inline-start: auto;
+    margin-right: 30px;
+
+}
+
+/* OVERRIDE */
+.top-Container a {
+    flex-direction: row;
+    margin-left: 20px;
+    font-size: 20px;
+    color:  black;
+}
+
+.top-img-Container {
+    display: flex;
+    flex-direction: column;
+    background-color: #1276B7;
+    /* margin-top: 10px; */
+    align-items: left;
+}
+
+.text-cont-top {
+    display: flex;
+    flex-direction: row;
+    margin-left: 100px;
+    padding: 15px;
+    /* background-color: aqua; */
+}
+
+.text-cont-top p{
+    margin: 10px;
+    color: black;
+    font-weight: bold;
+}
+
+.text-cont-top p:hover {
+    color: white;
+}
+
+.ad-cont {
+    display: none;
+    flex-direction: row;
+    height: 150px;
+    background-color: #AECCE4;
+    margin-top: 10px;
+    align-items: center;
+}
+
+.course-cont {
+    display: none;
+    flex-direction: row;
+    height: 150px;
+    background-color: #AECCE4;
+    margin-top: 10px;
+    height: auto;
+    width: auto;
+}
+
+.text-course-cont {
+    display: flex;
+    flex-direction: column;
+    /* background-color: white; */
+    margin-left: 50px;
+    line-height: 1.3;
+    font-size: 17px;
+
+}
+
+.text-courses-Offer {
+    display: flex;
+    flex-direction: row;
+}
+
+.scholar-cont {
+    display: none;
+    flex-direction: row;
+    height: auto;
+    background-color: #AECCE4;
+    margin-top: 10px;
+}
+
+.text-scholar-cont {
+    display: flex;
+    flex-direction: column;
+    /* background-color: white; */
+    margin-left: 50px;
+    line-height: 1.3;
+    font-size: 17px;
+
+}
+
+.text-scholar-Offer {
+    display: flex;
+    flex-direction: row;
+    /* background-color: blue; */
+}
+
+
+.achive-cont {
+    display: none;
+    flex-direction: row;
+    height: 150px;
+    background-color: #AECCE4;
+    margin-top: 10px;
+}
+/* 
+.newsInfo-cont {
+    display: none;
+    flex-direction: row;
+    height: 150px;
+    background-color: #AECCE4;
+    margin-top: 10px;
+} */
+
+.aboutUs-cont {
+    display: none;
+    flex-direction: row;
+    height: 150px;
+    background-color: #AECCE4;
+    margin-top: 10px;
+}
+
+.body-cont {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    /* background-color: beige; */
+    margin-top: 10px;
+    z-index: 1;
+    /* align-items: center; */
+}
+
+.btn-left-cont {
+    /* display: flex; */
+    flex-direction: column;
+    position: absolute;
+    top: 40%;
+    margin-left: 20px;
+    /* background-color: #AECCE4; */
+    background-color: transparent;
+    padding: 20px;
+    font-size: 50px;
+    color: white;
+}
+
+.btn-right-cont {
+    /* display: flex; */
+    flex-direction: column;
+    position: absolute;
+    top: 40%;
+    right: 0;
+    /* margin-left: 20px; */
+    /* background-color: #AECCE4; */
+    background-color: transparent;
+    padding: 20px;
+    font-size: 50px;
+    color: white;
+}
+
+
