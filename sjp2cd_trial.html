@@ -4,7 +4,6 @@
 <head>
     <link rel="stylesheet" href="css/sjp2cd.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <script src="scripts/trial.js"></script>
 </head>
 
 <body>
@@ -12,14 +11,8 @@
         <div class="logo-container">
             <img src="images/sjp2cdLogo.jpg" width="70px" height="auto">
             <div class="text-logo-cont">ST. JOHN PAUL II
-            <p>COLLEGE OF DAVAO</p>
-        </div>
-        </div>
-        <div class="top-right-container">
-            <a href = "https://twitter.com/"><i class="fa-brands fa-twitter"></i></a>
-            <a href = "https://facebook.com/sjp2cdofficial/"><i class="fa-brands fa-facebook"></i></a>
-            <a href = "https://tiktok.com/"><i class="fa-brands fa-tiktok"></i></a>
-            <a href = "https://youtube.com/results?search_query=sjp2cd+hymn"><i class="fa-brands fa-youtube"></i></a>  
+                <p>COLLEGE OF DAVAO</p>
+            </div>
         </div>
     </div>
     <div class="top-img-Container">
@@ -30,6 +23,12 @@
             <p id = "achievements" onclick="onClickAchievements()">ACHIEVEMENTS &#x2B9F;</p>
             <!-- <p id = "news_and_info" onclick="onClickNewsInfo()">NEWS & INFORMATION</p> -->
             <p id = "about us" onclick="onClickAboutUs()">ABOUT US &#x2B9F;</p>
+            <div class="top-right-container">
+                <a href = "https://twitter.com/"><i class="fa-brands fa-twitter"></i></a>
+                <a href = "https://facebook.com/sjp2cdofficial/"><i class="fa-brands fa-facebook"></i></a>
+                <a href = "https://tiktok.com/"><i class="fa-brands fa-tiktok"></i></a>
+                <a href = "https://youtube.com/results?search_query=sjp2cd+hymn"><i class="fa-brands fa-youtube"></i></a>  
+            </div>
         </div>
     </div>
     <div class="ad-cont" id="id_ad_cont"></div>
@@ -70,31 +69,59 @@
         <div class="text-scholar-cont">
             <h3>ACADEMIC SCHOLARSHIP OFFERED</h3>
             <div class="text-scholar-Offer">
-            <ul>
-                <li>TDP-tes Scholarship</li>
-                <li>UNIfast-tes Scholarship</li>
-                <li>EBSU-step Scholarship</li>
-                <li>CHED Tulong Dunong Scholarship 2023</li>
-            </ul>
-            <ul>
-                <li>GSIS Scholarship 2023</li>
-                <li>DOST-SEI Undergraduate Scholarship 2023</li>
-                <li>DOH Pre-Service Scholarship Program</li>
-                <li>Merit Scholarship</li>
-            </ul>
+                <ul>
+                    <li>TDP-tes Scholarship</li>
+                    <li>UNIfast-tes Scholarship</li>
+                    <li>EBSU-step Scholarship</li>
+                    <li>CHED Tulong Dunong Scholarship 2023</li>
+                </ul>
+                <ul>
+                    <li>GSIS Scholarship 2023</li>
+                    <li>DOST-SEI Undergraduate Scholarship 2023</li>
+                    <li>DOH Pre-Service Scholarship Program</li>
+                    <li>Merit Scholarship</li>
+                </ul>
             </div>
         </div>
     </div>
     <div class="achive-cont" id="id_achive_cont">ACHIEVEMENTS</div>
     <!-- <div class="newsInfo-cont" id="id_news_info_cont">NEWS & INFORMATION</div> -->
     <div class="aboutUs-cont" id="id_about_us_cont">ABOUT US</div>
-    <div class="body-cont">
-        <img src="images/arduino.jpg" width="auto" height="auto">
-        <div class="btn-left-cont">	&#10094;</div>
-        <div class="btn-right-cont"> &#10095;</div>
+    <div class="slideshow-cont">
+        <div class="image-slides fade">
+            <img src="images/ict_cleanup.png" width="auto" height="auto">
+            <div class="text-cont">
+                <h1>VISION</h1>
+                <p>BY 2023, A RECOGNIZE PROFESSIONAL INSTITUTION PROVIDING QUALITY,
+                    ECONOMICALLY ACCESSIBLE, AND TRANSFORMATIVE EDUCATION GROUNDED ON THE TEACHINGS OF ST. JOHN PAUL II.
+                </p>
+            </div>
+        </div>
+        <div class="image-slides fade">
+            <img src="images/mission1.png" width="auto" height="auto">
+            <div class="text-cont">
+                <div class="mission-text-right">
+                    <h1>MISSION</h1>
+                </div>
+                    <p>SERVE THE NATION BY PROVIDING COMPETENT JPCEAN GRADUATES THROUGH QUALITY TEACHING AND LEARNING,
+                        TRANSPARENT GOVERNANCE, HOLISTIC STUDENT SERVICES, AND MEANINGFUL COMMUNITY-ORIENTED RESEARCH, GUIDED BY THE IDEALS OF ST. JOHN PAUL II.                    
+                    </p>
+            </div>
+        </div>
+        <div class="image-slides fade">
+            <img src="images/code.jpg" width="auto" height="auto">
+        </div>
+        <div class="btn-left" onclick="onClickMainArrow(-1)"> &#10094;</div>
+        <div class="btn-right" onclick="onClickMainArrow(1)"> &#10095;</div>
+        <div class="dot-cont">
+            <!-- Dot 0 -->
+            <div class="dot" onclick="onClickDot(1)"></div> 
+            <div class="dot" onclick="onClickDot(2)"></div> 
+            <div class="dot" onclick="onClickDot(3)"></div>   
+        </div>
     </div>
-    
 
+    <script src="scripts/trial.js"></script>
 </body>
 </html>
 

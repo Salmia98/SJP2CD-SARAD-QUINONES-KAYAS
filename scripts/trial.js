@@ -1,6 +1,10 @@
 
 var displayedContainer="";
 
+
+var slideIndex=1;
+showSlide(slideIndex);
+
 function onClickAdmission(){
     console.log("Admission");
     setDisplayFlex("id_ad_cont");
@@ -59,3 +63,37 @@ function hideContainers(){
     // document.getElementById("id_news_info_cont").style.display = "none";
     document.getElementById("id_about_us_cont").style.display = "none";
 }
+
+
+
+function onClickMainArrow(n){
+    showSlide(slideIndex += n);
+}
+
+function showSlide(index){
+    console.log("Slide index",index)
+    let i;
+    let imgSlides=document.getElementsByClassName("image-slides");
+    let dots = document.getElementsByClassName("dot");
+    
+    if(index > imgSlides.length) slideIndex = 1;
+    else if(index < 1)slideIndex = imgSlides.length;
+
+    for(i=0; i < imgSlides.length;i++)
+        imgSlides[i].style.display = "none";
+
+    for (i = 0; i < dots.length; i++) {
+        dots[i].style.backgroundColor = "white";
+    }
+    
+    imgSlides[slideIndex-1].style.display = "block";
+    dots[slideIndex-1].style.backgroundColor = "gray";
+}
+
+// console.log("test value");
+function onClickDot(n){
+    console.log("test value", n);
+    showSlide(slideIndex=n);
+}
+
+
