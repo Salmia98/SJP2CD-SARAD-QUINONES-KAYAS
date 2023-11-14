@@ -1,0 +1,67 @@
+body{
+    background-image: url("../images/ict_wallpaper.png");
+}
+
+/* main container */
+.register-container{
+    display: flex;
+    flex-direction: column;
+    /* background-color: aqua; */
+    width: 100%;
+}
+
+/* main box container*/
+.box {
+    display: flex;
+    background-color: white;
+    border: 1px solid;
+    width: 50%;
+    margin: auto;
+    margin-top: 10%;
+    padding: 15px;
+}
+
+/* text all */
+.text-top{
+    display: flex;
+    flex-direction: column;
+    /* background-color: yellow; */
+    width: 25%;
+    margin-top: 20px;
+}
+
+/* main input container */
+.input-container {
+    display: flex;
+    flex-direction: column;
+    /* background-color: #c0c0c0 ; */
+    width: 70%;
+    height: 25px;
+    padding: 5px;
+}
+
+/* register button */
+.reg-button{
+    display: flex;
+    flex-direction: row;
+    background-color: #1276B7;
+    margin-top: 40px;
+    width: 72%;
+    justify-content: center;
+    cursor: pointer;
+    color: white;
+}
+
+/* hover background */
+.reg-button:hover{
+    background-color: #0021f3;
+}
+
+/* sjp logo container */
+.logo {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-right: 10%;
+    width: 30%;
+}

@@ -5,11 +5,6 @@ var displayedContainer="";
 var slideIndex=1;
 showSlide(slideIndex);
 
-function onClickAdmission(){
-    console.log("Admission");
-    setDisplayFlex("id_ad_cont");
-}
-
 function onClickCourses(){
     console.log("Courses");
     setDisplayFlex("id_course_cont");
@@ -26,14 +21,7 @@ function onClickScholarOffer(){
 function onClickAchievements(){
     console.log("Achiv");
     setDisplayFlex("id_achive_cont");
-
 }
-
-// function onClickNewsInfo(){
-//     console.log("News Info");
-//     setDisplayFlex("id_news_info_cont");
-
-// }
 
 function onClickAboutUs(){
     console.log("About Us");
@@ -60,7 +48,6 @@ function hideContainers(){
     document.getElementById("id_course_cont").style.display = "none";
     document.getElementById("id_scholar_cont").style.display = "none";
     document.getElementById("id_achive_cont").style.display = "none";
-    // document.getElementById("id_news_info_cont").style.display = "none";
     document.getElementById("id_about_us_cont").style.display = "none";
 }
 

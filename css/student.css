@@ -1,0 +1,109 @@
+
+body {
+    background-color: #d6eaff;
+    font-family: Tahoma, sans-serif;
+}
+
+/* MAIN HEADER CONT */
+.header-cont {
+    display: flex;
+    flex-direction: row;
+    background-color: blue;
+    padding: 10px;
+    font-family: bolder;
+}
+
+/* TEXT HEADER*/
+.text-cont {
+    flex-direction: column;
+    margin-left: 30px;
+    color: white;
+    padding: 15px;
+    word-spacing: 5px;
+    /* background-color: green; */
+}
+
+/* MAIN INQUIRE GRADES COLUMN */
+.column-left {
+    display: flex;
+    flex-direction: column;
+    background-color: violet;
+    width: 20%;
+    /* height: auto; */
+    align-items: left;
+    margin-top: 0;
+}
+
+/* SUB-TEXT COLUMN LEFT */
+.sub-text-left {
+    padding: 15px;
+    /* margin-left: 25px; */
+    background-color: white;
+    word-spacing: 5px;
+    margin-bottom: 5px;
+    cursor: pointer;
+    
+}
+
+/* ICONS COLOR OVERRIDE */
+.sub-text-left i{
+    color: black;
+}
+
+/* CLICK HOVER */
+.sub-text-left:hover{
+    background-color: #454545;
+    color: white;
+}
+.sub-text-left:hover i{
+    color: white;
+}
+
+/* MY GRADES DISPLAY */
+.grades-dis-cont {
+    display: none;
+    flex-direction: column;
+    height: 50vh;
+    width: 70%;
+    background-color: white;
+    margin-left: 25%;
+    position: absolute;
+}
+
+/* STATEMENT OF ACCOUNT DISPLAY */
+.acc-dis-cont {
+    display: none;
+    flex-direction: column;
+    margin-left: 25%;
+    height: 50vh;
+    width: 70%;
+    background-color: white;
+    position: absolute;
+}
+
+/* BORDER & TBL STYLE */
+.tbl-grades, td, th {
+    border: 1px solid black;
+    padding: 7px;
+  }
+  
+/* STUDENT GRADE TABLE */
+.tbl-all {
+    border-collapse: collapse;
+    /* height: 50px; */
+    width: 100%;
+    background-color: white;
+    text-align: left;
+}
+
+/* CLEARANCE CONTAINER */
+.clearance-cont {
+    display: none;
+    flex-direction: column;
+    background-color: pink;
+    width: 70%;
+    height: 50vh;
+    margin-left: 25%;
+    position: absolute;
+}
+

@@ -4,11 +4,13 @@ body {
 
 }
 
+/* main container top */
 .top-Container {
     display: flex;
     background-color: #fdfdff ;
 }
 
+/* top logo container */
 .logo-container {
     display: flex;
     flex-direction: row;
@@ -17,6 +19,7 @@ body {
     font-size: 15px;
 }
 
+/* text logo container */
 .text-logo-cont {
     display: flex;
     flex-direction: column;
@@ -25,16 +28,6 @@ body {
     margin-top: 10px;
     font-weight: bold;
     font-size: 20px;
-}
-
-/* icons */
-.top-right-container {
-    display: flex;
-    flex-direction: row;
-    /* background-color: pink; */
-    padding: 10px;
-    margin-inline-start: auto;
-    margin-right: 20px;
 }
 
 /* OVERRIDE top img cont*/
@@ -46,14 +39,17 @@ body {
     
 }
 
+/* Header feature */
 .top-img-Container {
     display: flex;
     flex-direction: column;
     background-color: #1276B7;
     /* margin-top: 10px; */
     align-items: left;
+    cursor: pointer;
 }
 
+/* text container of the features */
 .text-cont-top {
     display: flex;
     flex-direction: row;
@@ -62,136 +58,167 @@ body {
     /* background-color: aqua; */
 }
 
+/* override text container */
 .text-cont-top p{
     margin: 10px;
     color: black;
     font-weight: bold;
 }
 
+/* hover on click the features */
 .text-cont-top p:hover {
     color: white;
 }
 
-.ad-cont {
-    display: none;
-    flex-direction: row;
-    height: 150px;
-    background-color: #AECCE4;
-    margin-top: 10px;
-    align-items: center;
-}
-
+/* main container inside the course */
 .course-cont {
     display: none;
     flex-direction: row;
     height: 150px;
     background-color: #AECCE4;
-    margin-top: 10px;
     height: auto;
     width: auto;
 }
 
+/* sub text course cont */
 .text-course-cont {
     display: flex;
     flex-direction: column;
-    /* background-color: white; */
     margin-left: 50px;
     line-height: 1.3;
-    font-size: 17px;
-
+    font-size: 19px;
 }
 
+/* child text */
 .text-courses-Offer {
     display: flex;
     flex-direction: row;
 }
 
+/* main container inside the scholarship */
 .scholar-cont {
     display: none;
     flex-direction: row;
     height: auto;
     background-color: #AECCE4;
-    margin-top: 10px;
 }
 
+/* scholarship sub container */
 .text-scholar-cont {
     display: flex;
     flex-direction: column;
-    /* background-color: white; */
     margin-left: 50px;
     line-height: 1.3;
-    font-size: 17px;
+    font-size: 19px;
 }
 
+/* child text scholarship */
 .text-scholar-Offer {
     display: flex;
     flex-direction: row;
-    /* background-color: blue; */
 }
 
-
+/* achivements main container */
 .achive-cont {
     display: none;
     flex-direction: row;
-    height: 150px;
+    height: 35%;
     background-color: #AECCE4;
-    margin-top: 10px;
 }
-/* 
-.newsInfo-cont {
-    display: none;
-    flex-direction: row;
-    height: 150px;
-    background-color: #AECCE4;
-    margin-top: 10px;
-} */
 
+/* sub text of achivements container */
+.sub-text-achive{
+    display: flex;
+    flex-direction: column;
+    /* background-color: violet; */
+    width: 50%;
+    font-size: 19px;
+    margin-left: 50px;
+    line-height: 1.3;
+
+}
+
+/* child text achivements */
+.text-achive {
+    display: flex;
+    flex-direction: row;
+}
+
+/* about us main ontainer */
 .aboutUs-cont {
     display: none;
     flex-direction: row;
-    height: 150px;
+    height: 35%;
     background-color: #AECCE4;
-    margin-top: 10px;
+    justify-content: center;
 }
 
+/* text inside the about us */
+.text-about-us{
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    margin-top: 10px;
+    text-align: center;
+    font-size: 19px;
+    line-height: 1.3;
+}
+
+/* main container for slide show */
 .slideshow-cont {
     position: relative;
     display: flex;
     flex-direction: row;
-    /* background-color: beige; */
-    margin-top: 10px;
+    overflow: hidden;
+    width: 100%;
+    height: 80vh;
     z-index: 1;
-    /* align-items: center; */
 }
 
+/* override image slide video */
+.image-slides video{
+    width: 100%;
+    height: 80vh;
+    object-fit: fill;
+    position: absolute;
+}
+
+/* override image slide */
+.image-slides img{
+    width: 100%;
+    height: 100%;
+}
+
+/* clickable button container  */
 .btn-left, .btn-right{
     flex-direction: column;
     position: absolute;
     top: 40%;
     background-color: transparent;
-    padding: 20px;
     font-size: 50px;
     color: white;
 }
 
+/* button left margin */
 .btn-left{
     margin-left: 20px;
 }
 
+/* button right margin */
 .btn-right{
-    right: 0;
+    right: 20px;
 }
 
+/* clickable dot, below the img slides */
 .dot-cont {
     display: flex;
     flex-direction: row;
-    /* background-color: aqua; */
-    /* margin-left: 50%; */
     position: absolute;
     bottom: 0;
     left: 50%;
 }
 
+/* dot styles */
 .dot {
     cursor: pointer;
     height: 15px;
@@ -219,11 +246,11 @@ body {
     to {opacity: 1}
   }
 
+  /* text main container inside the img slides */
 .text-cont {
     display: flex;
     flex-direction: column;
     position: absolute;
-    /* background-color: transparent; */
     width: 65%;
     top: 20%;
     left: 20%;
@@ -233,9 +260,110 @@ body {
     word-spacing: 10px;
 }
 
+/* Mission text right position */
 .mission-text-right {
     text-align: right;
 }
+
+/* bottom main container */
+.sjp-cont {
+    display: flex;
+    flex-direction: row;
+    background-color: #AECCE4;
+}
+
+/* News & Information container */
+.text-bottom {
+    display: flex;
+    flex-direction: column;
+    background-color: #1276B7;
+    width: 50%;
+    font-size: 20px;
+    font-weight: bold;
+    align-items: center;
+    margin-right: 5px;
+    padding: 10px;
+}
+
+/* image buttom container */
+.img-bottom-cont{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    padding: 10px;
+    text-align: center;
+}
+
+/* text event */
+.text-event {
+    display: flex;
+    flex-direction: column;
+    background-color: #1276B7;
+    font-size: 20px;
+    font-weight: bold;
+    width: 50%;
+    text-align: center;
+}
+
+/* righ container events */
+.bottom-right{
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+}
+
+/* poster making container*/
+.btm-img{
+    display: flex;
+    flex-direction: row;
+    background-color: #AECCE4;
+    margin-top: 10px;
+    word-spacing: 5px;
+    font-size: 15px;
+}
+
+/* bottom footer */
+.footer{
+    display: flex;
+    flex-direction: row;
+    background-color: white;
+    justify-content: center;
+}
+
+/* icons container */
+.icons-main-cont {
+    display: flex;
+    flex-direction: row;
+    padding: 10px;
+    background-color: white; 
+    /* margin-bottom: 5px; */
+    cursor: pointer;
+}
+
+/* override icons container */
+.icons-main-cont a{
+    text-decoration: none;
+    color: black;
+    margin-top: 10px;
+    margin-left: 25px;
+}
+
+/* buttom logo container */
+.btm-logo{
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    align-items: center;
+    margin-top: 10px;
+}
+
+
+
+
+
+
+
+
 
 
 

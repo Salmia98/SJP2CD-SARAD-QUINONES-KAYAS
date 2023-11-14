@@ -1,0 +1,65 @@
+body{
+    background-image: url("../images/postermaking.jpg");;
+}
+
+/* login main container */
+.login-container{
+    display: flex;
+    /* background-color: pink; */
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 90vh;
+}
+
+/* sign up box container */
+.box-center{
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    width: 20%;
+    height: 45vh;
+}
+
+/* text header */
+.header{
+    display: flex;
+    background-color: #0021f3;
+    justify-content: center;
+    width: 100%;
+    height: 50px;
+    color: white;
+}
+
+/* username input */
+.input {
+    display: flex;
+    flex-direction: row;
+    height: 25px;
+    width: 90%;
+    padding: 5px;
+    margin-bottom: 20px;
+}
+
+/* text top */
+.text{
+    display: flex;
+    margin-top: 40px;
+}
+
+.btm-button{
+    display: flex;
+    background-color: #0021f3;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    color: white;
+    margin-top: 40px;
+    padding: 10px;
+    width: 94%;
+}
+
+.fields_container{
+    margin-left: 20px;
+}
+
