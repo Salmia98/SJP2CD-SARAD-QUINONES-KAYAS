@@ -61,7 +61,7 @@ function registerAccount(email,id,accountType,password){
         if (this.readyState==4 && this.status==200) {
             console.log("Success: " + this.responseText);
             if(this.responseText.trim() == "success"){
-                window.location.href = "C:/Users/Salmia%20Kayas/Documents/GitHub/SJP2CD/pages/login.html";
+                window.location.href = "login.html";
             }else{
                 failedValidation("Couldn't Register");
             }

@@ -28,7 +28,7 @@ function login(){
             if(this.responseText == "student" || this.responseText == "teacher"){
                 var accountType = this.responseText;
                 console.log("Account Type: " + accountType);
-                window.location.href = "C:/Users/Salmia%20Kayas/Documents/GitHub/SJP2CD/pages/student.html";
+                window.location.href = "student.html";
             }else{
                 failedValidation(this.responseText);
             }
