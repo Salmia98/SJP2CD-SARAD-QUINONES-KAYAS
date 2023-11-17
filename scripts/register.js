@@ -13,17 +13,30 @@ function onClickRegister(){
     console.log("Confirm Password: "+ inputConPass);
 
     // Checking email
-    if(!inputEmail.includes("@sjp2cd.edu.ph")){
+    if(inputEmail.trim() == ""){
+        failedValidation("Please Input Email.");
+        return;
+    }
+    else if(!inputEmail.trim().includes("@sjp2cd.edu.ph")){
         failedValidation("Not school email.");
         return;
     }
 
     // Checking password
     if(!(inputPass.length >= 6 && inputPass==inputConPass)){
-        if(inputPass.length < 6)
+        if(inputPass.trim() == "")
+            failedValidation("Please Input Password.");
+        else if(inputPass.trim() == "")
+            failedValidation("Please Input Confirm Password.");
+        else if(inputPass.length < 6)
             failedValidation("Password must be at least 6 Characters");
         else
             failedValidation("Password do not match");
+        return;
+    }
+
+    if(inputId.trim() == ""){
+        failedValidation("Please Input ID.");
         return;
     }
 
@@ -45,7 +58,7 @@ function onClickRegister(){
 
     var postData="student_teacher_id="+ inputId;
 
-    xmlhttp.open("POST","https://localhost/api/checkStudentTeacherID.php",true);
+    xmlhttp.open("POST","http://localhost/api/checkStudentTeacherID.php",true);
     xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
     xmlhttp.send(postData); 
 }
@@ -72,7 +85,7 @@ function registerAccount(email,id,accountType,password){
 
     var postData="email="+ email + "&id="+ id +"&password="+ password + "&acc_type=" + accountType;
 
-    xmlhttp.open("POST","https://localhost/api/addAccount.php",true);
+    xmlhttp.open("POST","http://localhost/api/addAccount.php",true);
     xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
     xmlhttp.send(postData); 
 }

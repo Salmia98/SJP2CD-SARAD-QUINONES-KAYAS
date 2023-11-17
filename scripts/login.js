@@ -40,7 +40,7 @@ function login(){
 
     var postData="student_teacher_id="+ inputId + "&passwrd=" + inputPass;
 
-    xmlhttp.open("POST","https://localhost/api/login.php",true);
+    xmlhttp.open("POST","http://localhost/api/login.php",true);
     xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
     xmlhttp.send(postData); 
 }
