@@ -6,21 +6,27 @@
     </head>
 
     <body>
+        
+        <!-- Login Container -->
         <div class="login-container">
             <div class="box-center">
+                <!-- Login Header -->
                 <div class="header">
                     <h4>SIGN-IN</h4> 
                 </div>
+                <!-- Input Fields -->
                 <div class="fields_container">
-                    <div class="text"><p>User ID/Name</p></div>
-                    <input class="input" type="text" placeholder="User ID/Name" name="usrnm">
+                    <div class="text"><p>Students/Teachers ID
+                    </p></div>
+                    <input class="input" id="student_teacher_id" type="text" placeholder="Students/Teachers ID" name="studteachID">
                     <div class="text"><p>Password</p></div>
-                    <input class="input" type="text" placeholder="Password" name="passwrd">
-                    <button class="btm-button"><a href=""><i class="fa-solid fa-right-to-bracket" style="color: white;"></i></a>SIGN IN</button>
+                    <input class="input" id="passwrd" type="text" placeholder="Password" name="passwrd">
+                    <div class="login-failed" id="login-failed"></div>
+                    <input type="checkbox" onclick="checkboxPass()">Show Password
+                    <button class="btm-button" onclick="login()"><a href=""><i class="fa-solid fa-right-to-bracket" style="color: white;"></i></a>SIGN IN</button>
                 </div>
-                
-                
             </div>
         </div>
+        <script src="../scripts/login.js"></script>
     </body>
 </html>

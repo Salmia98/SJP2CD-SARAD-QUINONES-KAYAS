@@ -26,8 +26,14 @@ body{
     display: flex;
     flex-direction: column;
     /* background-color: yellow; */
-    width: 25%;
+    width: 35%;
     margin-top: 20px;
+}
+
+/* checkbox to show password */
+.checkboxpass{
+    margin-top: 10px;
+    /* background-color: pink; */
 }
 
 /* main input container */
@@ -38,6 +44,7 @@ body{
     width: 70%;
     height: 25px;
     padding: 5px;
+    /* margin-top: 20px; */
 }
 
 /* register button */
@@ -45,7 +52,7 @@ body{
     display: flex;
     flex-direction: row;
     background-color: #1276B7;
-    margin-top: 40px;
+    margin-top: 20px;
     width: 72%;
     justify-content: center;
     cursor: pointer;
@@ -64,4 +71,11 @@ body{
     justify-content: center;
     margin-right: 10%;
     width: 30%;
+}
+
+/* message prompt password validation*/
+.pass-validation{
+    /* background-color: pink; */
+    margin-top: 20px;
+    color: red;
 }

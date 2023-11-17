@@ -7,14 +7,21 @@
         <div class="box">
             <div class="register-container">
                 <div class="text-top"><p>Email</p></div>
-                <input class="input-container" type="text" placeholder="Email" name="eml">
+                <input class="input-container" type="text" placeholder="Email" name="eml" id="email">
                 <div class="text-top"><p>Students/Teachers ID</p></div>
-                <input class="input-container" type="text" placeholder="Student/Teachers ID" name="stnt/tchrs">
+                <input class="input-container" type="text" placeholder="Student/Teachers ID" name="stnt/tchrs" id="student_teacher_id">
                 <div class="text-top"><p>Password</p></div>
-                <input class="input-container" type="text" placeholder="Password" name="psswrd">
+                <input class="input-container" type="text" placeholder="Password" name="psswrd" id="password">
+                <div class="checkboxpass">
+                <input type="checkbox" onclick="checkboxPass(true)">Show Password
+                </div>
                 <div class="text-top"><p>Confirm Password</p></div>
-                <input class="input-container" type="text" placeholder="Confirm Password" name="cnfrm psswrd">
-                <button class="reg-button"><h3>Register</h3></button>
+                <input class="input-container" type="text" placeholder="Confirm Password" name="cnfrm psswrd" id="confirm_password">
+                <div class="checkboxpass">
+                <input type="checkbox" onclick="checkboxPass(false)">Show Password
+                </div>
+                <div class="pass-validation" id="pass-validation"></div>
+                <button class="reg-button" onclick="onClickRegister()"><h3>Register</h3></button>
             </div>
             <div class="logo">
                 <img src="../images/sjp2cdLogo.jpg" width="auto" height="auto">
