@@ -70,4 +70,5 @@ body{
 .login-failed{
     /* background-color: pink; */
     color: red;
+    margin-top: 20px;
 }
