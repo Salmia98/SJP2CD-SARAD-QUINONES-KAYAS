@@ -11,7 +11,7 @@
     $sql = "CREATE TABLE IF NOT EXISTS Account (
     id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
     student_teacher_id VARCHAR(50),
-    acc_type BOOLEAN,
+    acc_type VARCHAR(10),
     email VARCHAR(50),
     passwrd VARCHAR(30) NOT NULL,
     reg_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
@@ -26,10 +26,10 @@
     // sql to create student table
     $sql = "CREATE TABLE IF NOT EXISTS student (
         id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
-        students_id VARCHAR(10),
+        student_id VARCHAR(10),
         personal_details_id VARCHAR(10),
         year_level INT(10),
-        students_course VARCHAR(10),
+        student_course VARCHAR(10),
         reg_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
         )";
     
@@ -41,7 +41,7 @@
 
     $sql = "CREATE TABLE IF NOT EXISTS teacher (
         id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
-        teachers_id VARCHAR(10),
+        teacher_id VARCHAR(10),
         personal_details_id VARCHAR(10),
         department VARCHAR(10),
         reg_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
