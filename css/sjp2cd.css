@@ -10,6 +10,15 @@ body {
     background-color: #fdfdff ;
 }
 
+/* login container */
+.login-cont{
+    flex-direction: row;
+    background-color: pink;
+    margin: auto;
+    cursor: pointer;
+    margin-right: 30px;
+}
+
 /* top logo container */
 .logo-container {
     display: flex;
@@ -122,7 +131,7 @@ body {
 .achive-cont {
     display: none;
     flex-direction: row;
-    height: 35%;
+    height: 50%;
     background-color: #AECCE4;
 }
 
@@ -148,7 +157,7 @@ body {
 .aboutUs-cont {
     display: none;
     flex-direction: row;
-    height: 35%;
+    height: 55%;
     background-color: #AECCE4;
     justify-content: center;
 }

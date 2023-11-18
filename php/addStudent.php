@@ -20,11 +20,13 @@
         if ($conn->connect_error) {
             die("Connection failed: " . $conn->connect_error);
         }
-
+        
+        # student part only
         // sql INSERT table
         $sql = "INSERT INTO personal_details (first_name, middle_initial, last_name, gender, birthday)
         VALUES ('$first_name', '$middle_initial', '$last_name', '$gender', '$birthday')";
-
+        
+        # admin part only
         if ($conn->query($sql) === TRUE) {
             
             $personal_details_id = $conn->insert_id; 
