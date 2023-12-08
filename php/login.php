@@ -7,25 +7,38 @@
         // Create connection
         $conn = new mysqli($servername, $username, $password, $dbname);
         // Check connection
-        if ($conn->connect_error) {
-            die("Connection failed: " . $conn->connect_error);
-        }
+        if ($conn->connect_error) die("Connection failed: " . $conn->connect_error);
         
-        $sql = "SELECT acc_type FROM account 
-        WHERE student_teacher_id='$student_teacher_id' AND passwrd='$passwrd' LIMIT 1;";
+        // Query Value
+        $sql = "SELECT passwrd, acc_type FROM account 
+        WHERE student_teacher_id='$student_teacher_id' LIMIT 1";
 
+        // passwrd='$passwrd' LIMIT 1;
+        // Query
         $res = $conn->query($sql);
-        if ($res->num_rows == 0) {
-            echo "Login Failed!";
-        }else{
+
+        // Account type
+        $accType = null;
+
+        // Check return
+        if($res->num_rows > 0){
+            // Fetch Data
             $row = $res->fetch_assoc();
-            echo $row["acc_type"];
+            // Verify password
+            if (password_verify($passwrd, $row['passwrd']))
+                /* The password is correct. */
+                $accType = $row["acc_type"];
         }
 
+        // Login Success
+        if ($accType != null) 
+            echo $accType;
+        // Login Failed
+        else
+            echo "Login Failed!";
+
+        // Close Connection
         $conn->close();
 
     }
-
-
-
 ?>

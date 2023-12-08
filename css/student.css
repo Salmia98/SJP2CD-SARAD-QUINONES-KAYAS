@@ -13,6 +13,13 @@ body {
     font-family: bolder;
 }
 
+/* personal information */
+.display-info{
+    margin: auto;
+    margin-right: 50px;
+    background-color: aqua;
+}
+
 /* TEXT HEADER*/
 .text-cont {
     flex-direction: column;
@@ -55,6 +62,7 @@ body {
     background-color: #454545;
     color: white;
 }
+
 .sub-text-left:hover i{
     color: white;
 }
@@ -62,48 +70,87 @@ body {
 /* MY GRADES DISPLAY */
 .grades-dis-cont {
     display: none;
-    flex-direction: column;
-    height: 50vh;
-    width: 70%;
-    background-color: white;
-    margin-left: 25%;
-    position: absolute;
+    /* position: absolute; */
 }
 
 /* STATEMENT OF ACCOUNT DISPLAY */
 .acc-dis-cont {
     display: none;
-    flex-direction: column;
-    margin-left: 25%;
-    height: 50vh;
-    width: 70%;
-    background-color: white;
-    position: absolute;
 }
 
-/* BORDER & TBL STYLE */
-.tbl-grades, td, th {
-    border: 1px solid black;
-    padding: 7px;
-  }
-  
-/* STUDENT GRADE TABLE */
-.tbl-all {
-    border-collapse: collapse;
-    /* height: 50px; */
-    width: 100%;
-    background-color: white;
-    text-align: left;
-}
 
 /* CLEARANCE CONTAINER */
 .clearance-cont {
     display: none;
     flex-direction: column;
+    width: 100%;
+}
+/* Table */
+.clearance-cont table{
+    padding: 10px;
+}
+
+.clearance-cont th{
+    padding: 10px;
+}
+
+.clearance-cont td{
+    padding: 10px;
+}
+
+/* main periods container */
+.main-periods-cont{
+    display: flex;
+    flex-direction: row;
+    /* background-color: aqua; */
+    margin-top: 5px;
+    padding: 10px;
+    width: 100%;
+}
+
+/* periodical container */
+.periods{
+    display: flex;
+    /* background-color: pink; */
+    margin-left: 20px;
+    color: black;
+    font-weight: normal;
+    cursor: pointer;
+}
+
+/* period style hover */
+.periods:hover{
+    color: #1276B7;
+}
+
+/* .inside-clearance-cont{
+    display: flex;
+    flex-direction: column;
     background-color: pink;
-    width: 70%;
-    height: 50vh;
-    margin-left: 25%;
-    position: absolute;
+    height: 100%;
+} */
+
+.clearance-display{
+    display: flex;
+    flex-direction: row;
+    background-color: aqua;
+    margin-bottom: 10px;
+}
+
+/* Main or Center Cointainer */
+.main-cont{
+    display: flex;
+    flex-direction: row;
+}
+
+/* Main Container right */
+.main-column-right{
+    margin-left: 10px;
+    width: auto;
+    background-color: white;
+}
+
+.clearance-table-cont{
+    margin-left: 10px;
 }
 

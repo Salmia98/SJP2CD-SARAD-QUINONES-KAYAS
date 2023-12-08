@@ -1,0 +1,30 @@
+body{
+    background-color: aqua;
+}
+
+/* header top */
+.hearder{
+    /* display: flex;
+    flex-direction: row; */
+    padding: 5px;
+    background-color: #0021f3;
+    color: white;
+    /* margin-left: 50px; */
+}
+
+/* left main dashboard */
+.dashboard-main{
+    flex-direction: column;
+    background-color: violet;
+    width: 20%;
+    height: 150px;
+}
+
+/* subject container */
+.subject-list{
+    /* margin-top: 5px; */
+    height: 50px;
+    background-color: pink;
+}
+
+/*  */

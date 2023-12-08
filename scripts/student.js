@@ -1,49 +1,204 @@
-// variable name
-var isMyGradesShow= true;
+// Saved data
+var displayedContainer="";
+var studentID = "";
+// Clearance
+var strJsonClearance = "";
+// Student Clearance
+var strJsonStudentClearance = "";
+const periods = ["prelim","midterm","final"];
+var prevPeriod = periods[0];
+
+// Initialize
+initialize();
+
+function initialize(){
+    // Get student id
+    studentID = sessionStorage.getItem("student_id");
+    console.log("Student ID: " + studentID);
+    displayStudentInfo();
+    // Display Grade
+    onClicksubtextleft();
+    // Get clearance
+    getClearance();
+    // Get student clearance
+    getStudentClearance();
+}
+
+function displayStudentInfo(){
+    document.getElementById("student_info").innerHTML = "ID Number: " + studentID; 
+}
 
 function onClicksubtextleft(){
-    console.log("text");
-    // display container
-    if (isMyGradesShow){
-        document.getElementById("id_grades_dis_cont").style.display="flex";
-        isMyGradesShow=false;
-        // Hide container
-    }else {
-        document.getElementById("id_grades_dis_cont").style.display="none";
-        isMyGradesShow=true;
-    }
-
+    setDisplayFlex("id_grades_dis_cont");
 }
 
-// variable name
-var isMyStateAccShow= true; 
 function onClicksubtextleft1(){
-    console.log("state value");
-    // display container
-    if (isMyStateAccShow){
-        document.getElementById("id_acc_dis_cont").style.display="flex";
-        isMyStateAccShow=false;
-        // Hide container
-    }else {
-        document.getElementById("id_acc_dis_cont").style.display="none";
-        isMyStateAccShow=true;
-    }
+    setDisplayFlex("id_acc_dis_cont");
     
 }
-
-// variable name
-var isMyClearanceShow=true;
 function onClicksubtextleft2(){
-    console.log("clearance value");
-    // display container
-    if (isMyClearanceShow){
-        document.getElementById("id_clearance_cont").style.display="flex";
-        isMyClearanceShow=false;
-        // hide container
-    }else {
-        document.getElementById("id_clearance_cont").style.display="none";
-        isMyClearanceShow=true;
+    setDisplayFlex("id_clearance_cont");
+    if(displayedContainer == "id_clearance_cont"){
+        displayClearance(prevPeriod);
     }
+}
+
+function setDisplayFlex(containerID){
+    // Hide Containers
+    hideContainers();
+    // Set Display Flex
+    if(displayedContainer == containerID) {
+        displayedContainer="";
+    }else{
+        document.getElementById(containerID).style.display = "flex";
+        displayedContainer=containerID;
+    }
+}
+
+function hideContainers(){
+    document.getElementById("id_grades_dis_cont").style.display = "none";
+    document.getElementById("id_acc_dis_cont").style.display = "none";
+    document.getElementById("id_clearance_cont").style.display = "none";
+}
+
+function getClearance(){
+    var xmlhttp=new XMLHttpRequest();
+    xmlhttp.onreadystatechange=function() {
+        if (this.readyState==4 && this.status==200) {
+            strJsonClearance = this.responseText;
+        }else if(this.readyState==4){
+            console.log("Fail");
+        }
+    }
+    xmlhttp.open("GET","http://localhost/api/getClearance.php",true);
+    xmlhttp.send();
+}
+
+function onClickDisplayClearance(index){
+    if(displayedContainer == "id_clearance_cont"){
+        displayClearance(periods[index]);
+    }
+}
+
+function displayClearance(period){
+    // Convert to JSON
+    let jsonClearance = JSON.parse(strJsonClearance);
+    // Table text
+    let tableText = "<table border='1'>";
+
+    // Headers
+    const clearanceHeaders = ["CLEARING OFFICE","CLEARED","REMARKS"];
+    // Add Table row
+    tableText += "<tr>";
+    // Add headers
+    for(let x in clearanceHeaders){
+        tableText += "<th>" + clearanceHeaders[x] + "</th>";
+    }
+    // End table row
+    tableText += "</tr>";
+
+    
+    
+    // tableText += "<td>" + jsonClearance[x].semester_periods + "</td>";
+    // Get Clearance Data
+    for(let x in jsonClearance){
+        // Check Period
+        if(!jsonClearance[x].semester_periods.includes(period)){
+            continue;
+        }
+        // Add Table row
+        tableText += "<tr>";
+        // Add Tablet Data
+        tableText += "<td>" + jsonClearance[x].office_name.toUpperCase() + "</td>";
+        // Get student clearance
+        let studentClearance = checkStudentClearance(jsonClearance[x].id,period);
+        // Check flag
+        let isChecked = false;
+        let remarks = "";
+        // Check if not empty
+        if(studentClearance != null){
+            // Check if cleared
+            isChecked = studentClearance[0] == 1?true:false;
+            // Remarks
+            remarks = studentClearance[1];
+        }
+        // Check table
+        tableText += "<td><input type=\"checkbox\" " + (isChecked?"checked":"") +" onclick=\"return false\"></td>"
+        tableText += "<td>" + remarks + "</td>";
+        // End table row
+        tableText += "</tr>";
+    }
+     
+
+    // End table text
+    tableText += "</table>"
+
+    document.getElementById("clearance").innerHTML = tableText;
+}
+
+function getStudentClearance(){
+    // Get Date
+    let dateNow = new Date();
+    let month = dateNow.getUTCMonth() +1;
+    let year = dateNow.getFullYear();
+    // Semester
+    let semester;
+    // 1st Sem (Aug-Dec)
+    if(month >= 8 && month <= 12)
+        semester = 1;
+    // 2nd Sem (Jan-May)
+    else if(month >= 1 && month <= 5)
+        semester = 2;
+    // Summer (Jun-July)
+    else if(month >= 6 && month <= 7)
+        semester = 3;
+    
+    // Semester Year
+    let year1,year2;
+    if (month >= 8 && month <= 12){
+        year1 = year;
+        year2 = year+1;
+    }else{
+        year1 = year-1;
+        year2 = year;
+    }
+    let semesterYear = year1 + "-" + year2;
+
+    // Initialize HTTP Request
+    var xmlhttp=new XMLHttpRequest();
+    // Response
+    xmlhttp.onreadystatechange=function() {
+        if (this.readyState==4 && this.status==200) {
+            // Store as JSON
+            strJsonStudentClearance = this.responseText;
+            console.log(strJsonStudentClearance);
+        }else if(this.readyState==4){
+            console.log("Fail: " + this.responseText);
+        }
+    }
+
+    // Post form data request
+    var postData="student_id="+ studentID + "&semester="+ semester +"&semester_year="+ semesterYear;
+
+    // Request
+    xmlhttp.open("POST","http://localhost/api/getStudentClearance.php",true);
+    xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+    xmlhttp.send(postData); 
+}
+
+function checkStudentClearance(clearanceID, period){
+    // Convert to JSON
+    let jsonClearance = JSON.parse(strJsonStudentClearance);
+
+    // Clearance
+    for(let x in jsonClearance){
+        if(clearanceID == jsonClearance[x].clearance_id && period == jsonClearance[x].semester_period){
+            return [jsonClearance[x].clearance_cleared, jsonClearance[x].remarks];
+        }
+    }
+
+    // Return empty
+    return null;
 }
 
 

@@ -29,6 +29,7 @@ function login(){
                 var accountType = this.responseText;
                 console.log("Account Type: " + accountType);
                 window.location.href = "student.html";
+                sessionStorage.setItem("student_id", inputId);
             }else{
                 failedValidation(this.responseText);
             }

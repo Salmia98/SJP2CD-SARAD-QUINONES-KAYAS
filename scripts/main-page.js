@@ -1,9 +1,9 @@
 
 var displayedContainer="";
 
-
 var slideIndex=1;
 showSlide(slideIndex);
+
 
 function onClickCourses(){
     console.log("Courses");
@@ -50,8 +50,6 @@ function hideContainers(){
     document.getElementById("id_achive_cont").style.display = "none";
     document.getElementById("id_about_us_cont").style.display = "none";
 }
-
-
 
 function onClickMainArrow(n){
     showSlide(slideIndex += n);

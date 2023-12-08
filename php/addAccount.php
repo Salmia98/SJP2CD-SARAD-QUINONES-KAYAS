@@ -8,6 +8,7 @@
         $id = $_POST['id'];
         $pass = $_POST['password'];
         $acc_type = $_POST['acc_type'];
+        $pass_hash = password_hash($pass, PASSWORD_DEFAULT);
         
         // Create connection
         $conn = new mysqli($servername, $username, $password, $dbname);
@@ -17,14 +18,14 @@
         }
     
         // sql INSERT table
-        $sql = "INSERT INTO account (student_teacher_id, acc_type, email, passwrd)
-        VALUES ('$id', '$acc_type', '$email', '$pass')";
+        $sql = "INSERT INTO account (student_teacher_id, acc_type, email, passwrd) 
+        VALUES ('$id', '$acc_type', '$email', '$pass_hash')";
     
     
         if ($conn->query($sql) === TRUE) {
             echo "success";
         } else {
-            echo "Error inserting table: " . $conn->error;
+            echo "Error Inserting Account: " . $conn->error;
         }
         
         $conn->close();

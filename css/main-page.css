@@ -1,13 +1,38 @@
 
 body {
     background-color: #d6eaff; 
-
 }
 
 /* main container top */
 .top-Container {
     display: flex;
     background-color: #fdfdff ;
+}
+
+.login-main-cont{
+    /* width: 20%; */
+    margin: auto;
+    margin-right: 100px;
+}
+
+/* login button top container */
+.login-cont{
+    /* background-color: pink; */
+    font-size: 20px;
+    padding: 15px;
+    cursor: pointer;
+}
+
+/* override underline link */
+.login-main-cont a{
+    text-decoration: none;
+    color: black;
+}
+
+/* login hover */
+.login-cont:hover{
+    background-color: #AECCE4;
+    border-radius: 25px;
 }
 
 /* top logo container */
@@ -215,7 +240,7 @@ body {
     flex-direction: row;
     position: absolute;
     bottom: 0;
-    left: 50%;
+    left: 47%;
 }
 
 /* dot styles */
@@ -248,8 +273,8 @@ body {
 
   /* text main container inside the img slides */
 .text-cont {
-    display: flex;
-    flex-direction: column;
+    /* display: flex;
+    flex-direction: column; */
     position: absolute;
     width: 65%;
     top: 20%;
@@ -272,7 +297,7 @@ body {
     background-color: #AECCE4;
 }
 
-/* News & Information container */
+/* News & Info and events container */
 .text-bottom {
     display: flex;
     flex-direction: column;
@@ -281,42 +306,34 @@ body {
     font-size: 20px;
     font-weight: bold;
     align-items: center;
-    margin-right: 5px;
     padding: 10px;
+    border-right: 5px solid #AECCE4;
 }
 
 /* image buttom container */
 .img-bottom-cont{
+    /* background-color: pink; */
+    border-top: 5px solid #AECCE4;
     display: flex;
     flex-direction: column;
     width: 100%;
     padding: 10px;
-    text-align: center;
 }
 
-/* text event */
-.text-event {
-    display: flex;
-    flex-direction: column;
-    background-color: #1276B7;
-    font-size: 20px;
-    font-weight: bold;
-    width: 50%;
+/* text container of every image */
+.images-text{
+    background-color: #AECCE4;
     text-align: center;
-}
-
-/* righ container events */
-.bottom-right{
-    display: flex;
-    flex-direction: column;
-    padding: 10px;
+    border-radius: 80px;
+    padding: 20px;
+    margin-left: 10px;
 }
 
 /* poster making container*/
 .btm-img{
     display: flex;
     flex-direction: row;
-    background-color: #AECCE4;
+    /* background-color: #AECCE4; */
     margin-top: 10px;
     word-spacing: 5px;
     font-size: 15px;
