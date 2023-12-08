@@ -26,9 +26,11 @@ function login(){
     xmlhttp.onreadystatechange=function() {
         if (this.readyState==4 && this.status==200) {
             if(this.responseText == "student" || this.responseText == "teacher"){
+                // Account type
                 var accountType = this.responseText;
-                console.log("Account Type: " + accountType);
+                // Next page
                 window.location.href = "student.html";
+                // Store Student ID
                 sessionStorage.setItem("student_id", inputId);
             }else{
                 failedValidation(this.responseText);

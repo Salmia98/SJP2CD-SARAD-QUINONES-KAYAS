@@ -1,5 +1,6 @@
-// Saved data
+// Display Container
 var displayedContainer="";
+// Student ID
 var studentID = "";
 // Clearance
 var strJsonClearance = "";
@@ -25,57 +26,72 @@ function initialize(){
 }
 
 function displayStudentInfo(){
+    // Display Student ID
     document.getElementById("student_info").innerHTML = "ID Number: " + studentID; 
 }
 
 function onClicksubtextleft(){
-    setDisplayFlex("id_grades_dis_cont");
+    // Display Grade Container
+    setDisplay("id_grades_dis_cont");
 }
 
 function onClicksubtextleft1(){
-    setDisplayFlex("id_acc_dis_cont");
+    // Display Account Container
+    setDisplay("id_acc_dis_cont");
     
 }
 function onClicksubtextleft2(){
-    setDisplayFlex("id_clearance_cont");
-    if(displayedContainer == "id_clearance_cont"){
+    // Display Clearance Container
+    setDisplay("id_clearance_cont");
+    // Check if Clearance container still displayed
+    if(displayedContainer == "id_clearance_cont")
+        // Display Clearance
         displayClearance(prevPeriod);
-    }
+    
 }
 
-function setDisplayFlex(containerID){
+function setDisplay(containerID){
     // Hide Containers
     hideContainers();
-    // Set Display Flex
+    // Check if same display
     if(displayedContainer == containerID) {
+        // Clear container
         displayedContainer="";
     }else{
+        // Set display as flex
         document.getElementById(containerID).style.display = "flex";
+        // Set displayed container
         displayedContainer=containerID;
     }
 }
 
 function hideContainers(){
+    // Hide Selection Containers
     document.getElementById("id_grades_dis_cont").style.display = "none";
     document.getElementById("id_acc_dis_cont").style.display = "none";
     document.getElementById("id_clearance_cont").style.display = "none";
 }
 
 function getClearance(){
+    // HTTP Request
     var xmlhttp=new XMLHttpRequest();
     xmlhttp.onreadystatechange=function() {
         if (this.readyState==4 && this.status==200) {
+            // Save Response as String JSON Clearance
             strJsonClearance = this.responseText;
         }else if(this.readyState==4){
             console.log("Fail");
         }
     }
+    // Request
     xmlhttp.open("GET","http://localhost/api/getClearance.php",true);
     xmlhttp.send();
 }
 
 function onClickDisplayClearance(index){
+    // Check if clearance still displayed
     if(displayedContainer == "id_clearance_cont"){
+        // Display Clearance
         displayClearance(periods[index]);
     }
 }
