@@ -198,6 +198,7 @@ function getStudentClearance(){
 
     // Request
     xmlhttp.open("POST","http://localhost/api/getStudentClearance.php",true);
+    // Convert post data to form data
     xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
     xmlhttp.send(postData); 
 }

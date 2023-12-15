@@ -16,8 +16,27 @@ body {
 /* personal information */
 .display-info{
     margin: auto;
-    margin-right: 50px;
-    background-color: aqua;
+    margin-right: 15px;
+    /* background-color: aqua; */
+}
+
+/* logout button */
+.logout-main-cont{
+    display: flex;
+    /* background-color: aqua; */
+    margin-right: 25px;
+    padding: 5px;
+    cursor: pointer;
+}
+
+.logout{
+    display: flex;
+    color: black;
+    /* background-color: pink; */
+}
+
+.logout:hover{
+    color: white;
 }
 
 /* TEXT HEADER*/

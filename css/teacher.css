@@ -7,24 +7,27 @@ body{
     /* display: flex;
     flex-direction: row; */
     padding: 5px;
-    background-color: #0021f3;
+    background-color: gray;
     color: white;
+    padding: 15px;
     /* margin-left: 50px; */
 }
 
 /* left main dashboard */
-.dashboard-main{
+.text-top{
     flex-direction: column;
-    background-color: violet;
+    background-color: red;
     width: 20%;
-    height: 150px;
+    padding: 10px;
+    /* height: 150px; */
 }
 
 /* subject container */
 .subject-list{
-    /* margin-top: 5px; */
-    height: 50px;
-    background-color: pink;
+    flex-direction: row;
+    background-color: purple;
+    margin-left: 20px;
+    /* margin-top: 0; */
 }
 
 /*  */
